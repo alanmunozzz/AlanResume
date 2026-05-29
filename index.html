@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alan Eliel Muñoz Castro | Professional Webpage</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#0d1117;
+    --secondary:#161b22;
+    --card:#1f2937;
+    --text:#ffffff;
+    --accent:#4f8cff;
+    --light:#f5f5f5;
+}
+
+.light-mode{
+    --bg:#f5f5f5;
+    --secondary:#ffffff;
+    --card:#e8e8e8;
+    --text:#111111;
+    --accent:#2563eb;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.4s;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:var(--secondary);
+    min-width:200px;
+    border-radius:10px;
+    padding:10px;
+    top:30px;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:10px;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+.toggle-btn{
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 8%;
+    background:linear-gradient(135deg,#0d1117,#111827);
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid var(--accent);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    opacity:0.9;
+}
+
+.highlight{
+    color:var(--accent);
+}
+
+.section{
+    padding:110px 8%;
+}
+
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--secondary);
+    padding:30px;
+    border-radius:20px;
+    transition:0.4s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:20px;
+    height:220px;
+    object-fit:cover;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:var(--secondary);
+    padding:20px;
+    border-radius:15px;
+}
+
+.progress{
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress span{
+    display:block;
+    height:12px;
+    background:var(--accent);
+}
+
+.resume-box,
+.statement-box,
+.video-box{
+    background:var(--secondary);
+    padding:40px;
+    border-radius:25px;
+    line-height:1.9;
+}
+
+.video-placeholder{
+    border:3px dashed var(--accent);
+    padding:70px;
+    text-align:center;
+    border-radius:20px;
+    margin-top:30px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:var(--secondary);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+.nav-links{
+    gap:15px;
+    font-size:0.9rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+
+<div class="logo">Alan EMC</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+
+<li class="dropdown">
+<a href="#">About ▼</a>
+
+<div class="dropdown-content">
+<a href="#resume">Resume / CV</a>
+<a href="#statement">Personal Statement</a>
+<a href="#skills">Skills</a>
+</div>
+
+</li>
+
+<li><a href="#work">Relevant Work</a></li>
+<li><a href="#interests">Interests</a></li>
+<li><a href="#video">Admissions Video</a></li>
+
+</ul>
+
+<button class="toggle-btn" onclick="toggleMode()">Mode</button>
+
+</nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<img src="img1.jpg" alt="Profile Photo">
+
+<h1>Alan Eliel <span class="highlight">Muñoz Castro</span></h1>
+
+<p>
+“Creativity becomes powerful when it is combined with discipline, confidence and purpose.”
+</p>
+
+<br>
+
+<p>
+High school student from Universidad del Valle de México (UVM) passionate about creativity, technology, communication and personal growth.
+</p>
+
+</div>
+
+</section>
+
+<!-- RESUME -->
+
+<section class="section" id="resume">
+
+<h2 class="section-title">Resume / CV</h2>
+
+<div class="resume-box">
+
+<h3>Education</h3>
+<p>
+Currently studying 4th semester of High School at Universidad del Valle de México (UVM) Campus Mérida.
+</p>
+
+<br>
+
+<h3>Languages</h3>
+
+<ul>
+<li>Spanish — Native</li>
+<li>English — Advanced</li>
+<li>French — Beginner (A1/A2)</li>
+<li>Chinese — Beginner</li>
+</ul>
+
+<br>
+
+<h3>Technical Skills</h3>
+
+<ul>
+<li>Microsoft PowerPoint</li>
+<li>Canva Design</li>
+<li>Advanced Excel Certification</li>
+<li>Artificial Intelligence Tools</li>
+<li>Computer Applications</li>
+<li>Computer Software</li>
+</ul>
+
+<br>
+
+<h3>Personal Skills</h3>
+
+<ul>
+<li>Critical Thinking</li>
+<li>Creativity</li>
+<li>Problem Resolution</li>
+<li>Communication</li>
+<li>Computer Literate</li>
+<li>Mathematics</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- PERSONAL STATEMENT -->
+
+<section class="section" id="statement">
+
+<h2 class="section-title">Personal Statement</h2>
+
+<div class="statement-box">
+
+<p>
+I realized I could feel the same silence in completely different ways. The first time, I didn’t understand it. The second time, I did. That difference changed the way I see myself in social situations and how I react to them now.
+</p>
+
+<br>
+
+<p>
+At the beginning of high school, I was genuinely excited. I expected to find close friends and feel understood. During the first semester, I met people and spent time together, but something felt off. Conversations didn’t excite me and instead of feeling connected, I felt distant.
+</p>
+
+<br>
+
+<p>
+Months later, at a party full of noise and distractions, I experienced that same silence again. But this time, I realized something important: silence is not always rejection. Sometimes people are distracted, environments are chaotic or timing simply isn’t perfect.
+</p>
+
+<br>
+
+<p>
+That realization changed me. I started questioning negative assumptions and became more aware of reality instead of my fears. I learned that confidence grows through actions, not thoughts.
+</p>
+
+<br>
+
+<p>
+Today, I continue developing socially while understanding that silence does not define me — my actions do.
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="section" id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<h3>English</h3>
+<div class="progress"><span style="width:90%"></span></div>
+</div>
+
+<div class="skill">
+<h3>Spanish</h3>
+<div class="progress"><span style="width:100%"></span></div>
+</div>
+
+<div class="skill">
+<h3>French</h3>
+<div class="progress"><span style="width:35%"></span></div>
+</div>
+
+<div class="skill">
+<h3>Chinese</h3>
+<div class="progress"><span style="width:20%"></span></div>
+</div>
+
+<div class="skill">
+<h3>Creativity</h3>
+<div class="progress"><span style="width:95%"></span></div>
+</div>
+
+<div class="skill">
+<h3>Critical Thinking</h3>
+<div class="progress"><span style="width:88%"></span></div>
+</div>
+
+</div>
+
+</section>
+
+<!-- RELEVANT WORK -->
+
+<section class="section" id="work">
+
+<h2 class="section-title">Relevant Work</h2>
+
+<div class="card-container">
+
+<div class="card">
+<img src="img2.jpg" alt="">
+<h3>Solar System Project</h3>
+<p>
+English presentation about the solar system focused on Neptune, celestial bodies, moons and the history behind planet names.
+</p>
+</div>
+
+<div class="card">
+<img src="img3.jpg" alt="">
+<h3>Spelling Bee Champion</h3>
+<p>
+Won 1st place in a school zone spelling bee competition against approximately 40 participants.
+</p>
+</div>
+
+<div class="card">
+<img src="img4.jpg" alt="">
+<h3>First Communion</h3>
+<p>
+A spiritual experience that strengthened my personal values and connection with Catholicism.
+</p>
+</div>
+
+<div class="card">
+<img src="img5.jpg" alt="">
+<h3>Pianist</h3>
+<p>
+Participated in piano recitals and musical collaborations involving saxophone and cello performances.
+</p>
+</div>
+
+<div class="card">
+<img src="img6.jpg" alt="">
+<h3>Hospital Volunteer</h3>
+<p>
+Participated in Christmas volunteer activities for children with cancer by organizing shows, gifts and meals.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- INTERESTS -->
+
+<section class="section" id="interests">
+
+<h2 class="section-title">Personal Interests</h2>
+
+<div class="card-container">
+
+<div class="card">
+<img src="img7.jpg" alt="">
+<h3>Gaming</h3>
+<p>
+I enjoy videogames on PC because they help me improve strategy, creativity and teamwork.
+</p>
+</div>
+
+<div class="card">
+<h3>Swimming & Cardio</h3>
+<p>
+I enjoy swimming, aerobics, pilates and cardio activities to maintain physical and mental wellness.
+</p>
+</div>
+
+<div class="card">
+<h3>Creativity & Technology</h3>
+<p>
+I like combining creativity with modern technology, design and digital tools.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- VIDEO PLACEHOLDER -->
+
+<section class="section" id="video">
+
+<h2 class="section-title">Admissions Video</h2>
+
+<div class="video-box">
+
+<p>
+Admissions Video Coming Soon...
+</p>
+
+<div class="video-placeholder">
+
+<h1>🎥</h1>
+
+<br>
+
+<p>
+Future admissions presentation video placeholder.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Alan Eliel Muñoz Castro | Professional Portfolio
+</p>
+
+</footer>
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
+
+</script>
+
+</body>
+</html>
