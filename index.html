@@ -3,264 +3,479 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alan Eliel Muñoz Castro | Professional Webpage</title>
+
+<title>Alan Eliel Muñoz Castro | Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 :root{
-    --bg:#0d1117;
-    --secondary:#161b22;
-    --card:#1f2937;
-    --text:#ffffff;
-    --accent:#4f8cff;
-    --light:#f5f5f5;
+--bg:#07111f;
+--card:#111c2e;
+--card2:#162338;
+--text:#ffffff;
+--accent:#3b82f6;
+--light:#f4f7fb;
+--shadow:0 10px 35px rgba(0,0,0,0.35);
 }
 
 .light-mode{
-    --bg:#f5f5f5;
-    --secondary:#ffffff;
-    --card:#e8e8e8;
-    --text:#111111;
-    --accent:#2563eb;
+--bg:#f5f7fb;
+--card:#ffffff;
+--card2:#e9eef7;
+--text:#111827;
+--accent:#2563eb;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    transition:0.4s;
+font-family:'Outfit',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+transition:0.4s;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:rgba(59,130,246,0.08);
+filter:blur(120px);
+top:-200px;
+right:-100px;
+z-index:-1;
 }
 
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:rgba(5,10,20,0.65);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 7%;
 }
 
 .logo{
-    font-size:1.4rem;
-    font-weight:700;
+font-size:1.5rem;
+font-weight:800;
+letter-spacing:1px;
+}
+
+.logo span{
+color:var(--accent);
 }
 
 .nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-.nav-links li{
-    position:relative;
+display:flex;
+gap:25px;
+list-style:none;
+align-items:center;
 }
 
 .nav-links a{
-    color:var(--text);
-    text-decoration:none;
-    font-weight:500;
-    transition:0.3s;
+color:var(--text);
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
 }
 
 .nav-links a:hover{
-    color:var(--accent);
+color:var(--accent);
+}
+
+.dropdown{
+position:relative;
 }
 
 .dropdown-content{
-    display:none;
-    position:absolute;
-    background:var(--secondary);
-    min-width:200px;
-    border-radius:10px;
-    padding:10px;
-    top:30px;
+display:none;
+position:absolute;
+background:var(--card);
+padding:15px;
+border-radius:15px;
+top:35px;
+min-width:220px;
+box-shadow:var(--shadow);
 }
 
 .dropdown-content a{
-    display:block;
-    padding:10px;
+display:block;
+padding:10px;
 }
 
 .dropdown:hover .dropdown-content{
-    display:block;
+display:block;
 }
 
-.toggle-btn{
-    background:var(--accent);
-    color:white;
-    border:none;
-    padding:10px 18px;
-    border-radius:20px;
-    cursor:pointer;
-    font-weight:600;
+.theme-toggle{
+width:65px;
+height:34px;
+background:var(--card2);
+border-radius:50px;
+position:relative;
+cursor:pointer;
+display:flex;
+align-items:center;
+padding:5px;
+transition:0.4s;
+}
+
+.toggle-circle{
+width:24px;
+height:24px;
+background:var(--accent);
+border-radius:50%;
+position:absolute;
+left:5px;
+transition:0.4s;
+}
+
+.light-mode .toggle-circle{
+left:35px;
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:120px 8%;
-    background:linear-gradient(135deg,#0d1117,#111827);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:140px 8%;
+position:relative;
 }
 
-.hero-content{
-    max-width:800px;
+.hero-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+width:100%;
+max-width:1300px;
 }
 
-.hero img{
-    width:180px;
-    height:180px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid var(--accent);
-    margin-bottom:25px;
+.hero-left img{
+width:100%;
+max-width:420px;
+border-radius:30px;
+box-shadow:var(--shadow);
+border:3px solid rgba(255,255,255,0.08);
 }
 
-.hero h1{
-    font-size:3.5rem;
-    margin-bottom:15px;
+.hero-right h1{
+font-size:4.5rem;
+line-height:1;
+margin-bottom:20px;
 }
 
-.hero p{
-    font-size:1.2rem;
-    line-height:1.8;
-    opacity:0.9;
+.hero-right span{
+color:var(--accent);
 }
 
-.highlight{
-    color:var(--accent);
+.hero-right p{
+font-size:1.15rem;
+line-height:1.9;
+opacity:0.9;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:15px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+display:inline-block;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.btn-outline{
+background:transparent;
+border:2px solid var(--accent);
 }
 
 .section{
-    padding:110px 8%;
+padding:120px 8%;
 }
 
 .section-title{
-    font-size:2.5rem;
-    margin-bottom:40px;
-    text-align:center;
+font-size:3rem;
+margin-bottom:60px;
+text-align:center;
+font-weight:800;
 }
 
-.card-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
 }
 
 .card{
-    background:var(--secondary);
-    padding:30px;
-    border-radius:20px;
-    transition:0.4s;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+background:linear-gradient(145deg,var(--card),var(--card2));
+padding:35px;
+border-radius:28px;
+box-shadow:var(--shadow);
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.04);
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
 .card img{
-    width:100%;
-    border-radius:15px;
-    margin-bottom:20px;
-    height:220px;
-    object-fit:cover;
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:20px;
 }
 
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.card h3{
+font-size:1.5rem;
+margin-bottom:15px;
 }
 
-.skill{
-    background:var(--secondary);
-    padding:20px;
-    border-radius:15px;
+.card p,
+.card li{
+line-height:1.9;
+opacity:0.92;
 }
 
-.progress{
-    background:#333;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:10px;
+.resume-preview{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
-.progress span{
-    display:block;
-    height:12px;
-    background:var(--accent);
+.resume-preview img{
+width:100%;
+border-radius:25px;
+box-shadow:var(--shadow);
 }
 
-.resume-box,
-.statement-box,
+.resume-info{
+background:linear-gradient(145deg,var(--card),var(--card2));
+padding:45px;
+border-radius:30px;
+box-shadow:var(--shadow);
+}
+
+.resume-info h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.resume-buttons{
+margin-top:30px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.statement-box{
+background:linear-gradient(145deg,var(--card),var(--card2));
+padding:50px;
+border-radius:30px;
+box-shadow:var(--shadow);
+}
+
+.statement-box p{
+line-height:2;
+margin-bottom:25px;
+font-size:1.05rem;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.skill-card{
+background:linear-gradient(145deg,var(--card),var(--card2));
+padding:35px;
+border-radius:25px;
+box-shadow:var(--shadow);
+}
+
+.skill-card h3{
+margin-bottom:25px;
+font-size:1.6rem;
+}
+
+.skill-item{
+margin-bottom:20px;
+}
+
+.skill-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+.skill-bar{
+width:100%;
+height:12px;
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:100%;
+background:linear-gradient(90deg,var(--accent),#60a5fa);
+border-radius:20px;
+}
+
+.timeline{
+position:relative;
+padding-left:25px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:0;
+top:0;
+width:3px;
+height:100%;
+background:var(--accent);
+}
+
+.timeline-item{
+margin-bottom:35px;
+position:relative;
+padding-left:25px;
+}
+
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-9px;
+top:5px;
+width:16px;
+height:16px;
+background:var(--accent);
+border-radius:50%;
+}
+
 .video-box{
-    background:var(--secondary);
-    padding:40px;
-    border-radius:25px;
-    line-height:1.9;
+background:linear-gradient(145deg,var(--card),var(--card2));
+padding:50px;
+border-radius:30px;
+text-align:center;
+box-shadow:var(--shadow);
 }
 
 .video-placeholder{
-    border:3px dashed var(--accent);
-    padding:70px;
-    text-align:center;
-    border-radius:20px;
-    margin-top:30px;
+margin-top:35px;
+padding:100px;
+border:3px dashed var(--accent);
+border-radius:25px;
+font-size:1.3rem;
 }
 
 footer{
-    text-align:center;
-    padding:40px;
-    background:var(--secondary);
+padding:50px;
+text-align:center;
+background:var(--card);
+margin-top:60px;
 }
 
-@media(max-width:768px){
+@media(max-width:980px){
 
-.hero h1{
-    font-size:2.3rem;
+.hero-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-left{
+display:flex;
+justify-content:center;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.resume-preview{
+grid-template-columns:1fr;
+}
+
+.hero-right h1{
+font-size:3rem;
 }
 
 .nav-links{
-    gap:15px;
-    font-size:0.9rem;
+gap:15px;
+font-size:0.9rem;
+}
+
+}
+
+@media(max-width:700px){
+
+.section-title{
+font-size:2.2rem;
+}
+
+.hero-right h1{
+font-size:2.5rem;
+}
+
+.video-placeholder{
+padding:50px 20px;
 }
 
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
+
 <nav>
 
-<div class="logo">Alan EMC</div>
+<div class="logo">Alan<span>EMC</span></div>
 
 <ul class="nav-links">
 
 <li><a href="#home">Home</a></li>
 
 <li class="dropdown">
+
 <a href="#">About ▼</a>
 
 <div class="dropdown-content">
@@ -277,30 +492,47 @@ footer{
 
 </ul>
 
-<button class="toggle-btn" onclick="toggleMode()">Mode</button>
+<div class="theme-toggle" onclick="toggleTheme()">
+<div class="toggle-circle"></div>
+</div>
 
 </nav>
+
 </header>
 
-<!-- HOME -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-<div class="hero-content">
+<div class="hero-container">
 
-<img src="img1.jpg" alt="Profile Photo">
+<div class="hero-left">
+<img src="img1.jpg" alt="">
+</div>
 
-<h1>Alan Eliel <span class="highlight">Muñoz Castro</span></h1>
+<div class="hero-right">
+
+<h1>Alan Eliel<br><span>Muñoz Castro</span></h1>
+
+<p>
+Creative and academically motivated high school student from Universidad del Valle de México (UVM), passionate about technology, communication, leadership and personal growth.
+</p>
 
 <p>
 “Creativity becomes powerful when it is combined with discipline, confidence and purpose.”
 </p>
 
-<br>
+<div class="hero-buttons">
 
-<p>
-High school student from Universidad del Valle de México (UVM) passionate about creativity, technology, communication and personal growth.
-</p>
+<a href="#resume" class="btn">View Resume</a>
+
+<a href="Alan_Munoz_CV.pdf" download class="btn btn-outline">
+Download CV
+</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -312,49 +544,50 @@ High school student from Universidad del Valle de México (UVM) passionate about
 
 <h2 class="section-title">Resume / CV</h2>
 
-<div class="resume-box">
+<div class="resume-preview">
 
-<h3>Education</h3>
+<img src="img8.png" alt="CV Preview">
+
+<div class="resume-info">
+
+<h3>Professional Resume</h3>
+
 <p>
-Currently studying 4th semester of High School at Universidad del Valle de México (UVM) Campus Mérida.
+This curriculum vitae summarizes my academic background, leadership experiences, volunteering activities, language proficiency and technical competencies.
 </p>
 
 <br>
 
-<h3>Languages</h3>
-
-<ul>
-<li>Spanish — Native</li>
-<li>English — Advanced</li>
-<li>French — Beginner (A1/A2)</li>
-<li>Chinese — Beginner</li>
-</ul>
+<p>
+The document includes:
+</p>
 
 <br>
 
-<h3>Technical Skills</h3>
-
 <ul>
-<li>Microsoft PowerPoint</li>
-<li>Canva Design</li>
-<li>Advanced Excel Certification</li>
-<li>Artificial Intelligence Tools</li>
-<li>Computer Applications</li>
-<li>Computer Software</li>
+
+<li>Education & Academic Background</li>
+<li>Languages & Certifications</li>
+<li>Technical Skills</li>
+<li>Leadership & Communication</li>
+<li>Relevant Achievements</li>
+<li>Volunteer Experience</li>
+
 </ul>
 
-<br>
+<div class="resume-buttons">
 
-<h3>Personal Skills</h3>
+<a href="Alan_Munoz_CV.pdf" download class="btn">
+Download PDF CV
+</a>
 
-<ul>
-<li>Critical Thinking</li>
-<li>Creativity</li>
-<li>Problem Resolution</li>
-<li>Communication</li>
-<li>Computer Literate</li>
-<li>Mathematics</li>
-</ul>
+<a href="mailto:alansanpatricks@gmail.com" class="btn btn-outline">
+Contact Me
+</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -369,31 +602,39 @@ Currently studying 4th semester of High School at Universidad del Valle de Méxi
 <div class="statement-box">
 
 <p>
-I realized I could feel the same silence in completely different ways. The first time, I didn’t understand it. The second time, I did. That difference changed the way I see myself in social situations and how I react to them now.
+I realized I could feel the same silence in completely different ways. The first time, I didn't understand it. The second time, I did. That difference changed the way I see myself in social situations and how I react to them now.
 </p>
 
-<br>
-
 <p>
-At the beginning of high school, I was genuinely excited. I expected to find close friends and feel understood. During the first semester, I met people and spent time together, but something felt off. Conversations didn’t excite me and instead of feeling connected, I felt distant.
+At the beginning of high school, I was genuinely excited. I had felt lonely before so I saw it as a fresh start. I expected to find close friends, to feel understood and to finally have the kind of social life I had imagined. During the first semester, I did meet people and we spent time together, but something felt off. Our interests didn't match much and the environment felt heavy. Conversations didn't excite me and instead of feeling connected, I felt distant.
 </p>
 
-<br>
-
 <p>
-Months later, at a party full of noise and distractions, I experienced that same silence again. But this time, I realized something important: silence is not always rejection. Sometimes people are distracted, environments are chaotic or timing simply isn’t perfect.
+Without realizing it, I started going quiet, not because I had nothing to say but because I didn't feel like I belonged in those conversations. At that time, I didn't question it. I assumed something was wrong with me. I thought maybe I just wasn't social enough or interesting enough to fit in. So I stayed silent. It felt easier than forcing myself into conversations that didn't feel natural or pretending to be someone I was not.
 </p>
 
-<br>
-
 <p>
-That realization changed me. I started questioning negative assumptions and became more aware of reality instead of my fears. I learned that confidence grows through actions, not thoughts.
+Months later, I found myself at a party, surrounded by loud music and people talking over each other. I tried to join in, but my words got lost and eventually I stopped trying. For a moment, I felt that same silence again, the same discomfort. My mind immediately told me the same thing: they are not listening because they are not interested in you.
 </p>
 
-<br>
+<p>
+But this time, I paused. Instead of listening to that thought, I looked around. People were interrupting each other, laughing loudly and barely paying full attention to anyone. The environment itself made it hard to be heard. In that moment, I realized something important: my mind was repeating a story that wasn't necessarily true.
+</p>
 
 <p>
-Today, I continue developing socially while understanding that silence does not define me — my actions do.
+The silence I felt wasn't always rejection. Sometimes, it was just noise, timing or my own hesitation. That realization became a turning point for me. I started paying less attention to what my mind assumed and more attention to what people were actually doing.
+</p>
+
+<p>
+Most of the time, their actions didn't match the negative ideas in my head. They weren't rejecting me, they were simply distracted, busy or unaware.
+</p>
+
+<p>
+Changing this hasn't been immediate. I still overthink and there are moments when staying quiet feels safer. But now I question those thoughts. I push myself to speak even if it's something small. I stay present instead of withdrawing and I remind myself that not every silence has the same meaning.
+</p>
+
+<p>
+I've learned that my mind can work against me but it can also help me grow if I choose how to respond to it, and how to act. I'm still becoming more social but now I understand that silence doesn't define me, my actions do and that gives me confidence. This perspective continues shaping how I interact with others daily.
 </p>
 
 </div>
@@ -404,89 +645,155 @@ Today, I continue developing socially while understanding that silence does not 
 
 <section class="section" id="skills">
 
-<h2 class="section-title">Skills</h2>
+<h2 class="section-title">Skills & Languages</h2>
 
-<div class="skills">
+<div class="skills-grid">
 
-<div class="skill">
-<h3>English</h3>
-<div class="progress"><span style="width:90%"></span></div>
+<div class="skill-card">
+
+<h3>Languages</h3>
+
+<div class="skill-item">
+<div class="skill-header">
+<span>English</span>
+<span>Advanced</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
 </div>
 
-<div class="skill">
-<h3>Spanish</h3>
-<div class="progress"><span style="width:100%"></span></div>
+<div class="skill-item">
+<div class="skill-header">
+<span>Spanish</span>
+<span>Native</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill" style="width:100%"></div>
+</div>
 </div>
 
-<div class="skill">
-<h3>French</h3>
-<div class="progress"><span style="width:35%"></span></div>
+<div class="skill-item">
+<div class="skill-header">
+<span>French</span>
+<span>A1/A2</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill" style="width:35%"></div>
+</div>
 </div>
 
-<div class="skill">
-<h3>Chinese</h3>
-<div class="progress"><span style="width:20%"></span></div>
+<div class="skill-item">
+<div class="skill-header">
+<span>Chinese</span>
+<span>Beginner</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill" style="width:20%"></div>
+</div>
 </div>
 
-<div class="skill">
-<h3>Creativity</h3>
-<div class="progress"><span style="width:95%"></span></div>
 </div>
 
-<div class="skill">
-<h3>Critical Thinking</h3>
-<div class="progress"><span style="width:88%"></span></div>
+<div class="skill-card">
+
+<h3>Technical Skills</h3>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>Advanced Excel Certification</h4>
+<p>Data management, formulas, tables and organization.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Canva & Design</h4>
+<p>Presentation creation and digital visual design.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Artificial Intelligence Tools</h4>
+<p>Use of modern AI platforms and productivity tools.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Computer Software</h4>
+<p>Knowledge of digital applications and academic tools.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Professional Qualities</h3>
+
+<ul style="line-height:2.2; padding-left:20px;">
+
+<li>Critical Thinking</li>
+<li>Leadership</li>
+<li>Public Speaking</li>
+<li>Communication</li>
+<li>Problem Resolution</li>
+<li>Adaptability</li>
+<li>Creativity</li>
+<li>Teamwork</li>
+<li>Academic Responsibility</li>
+
+</ul>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- RELEVANT WORK -->
+<!-- WORK -->
 
 <section class="section" id="work">
 
 <h2 class="section-title">Relevant Work</h2>
 
-<div class="card-container">
+<div class="grid">
 
 <div class="card">
-<img src="img2.jpg" alt="">
+<img src="img2.jpg">
 <h3>Solar System Project</h3>
 <p>
-English presentation about the solar system focused on Neptune, celestial bodies, moons and the history behind planet names.
+English academic presentation focused on Neptune, celestial bodies, moons and the history behind planet names.
 </p>
 </div>
 
 <div class="card">
-<img src="img3.jpg" alt="">
+<img src="img3.jpg">
 <h3>Spelling Bee Champion</h3>
 <p>
-Won 1st place in a school zone spelling bee competition against approximately 40 participants.
+Won 1st place in a school-zone spelling bee competition against approximately 40 participants.
 </p>
 </div>
 
 <div class="card">
-<img src="img4.jpg" alt="">
+<img src="img4.jpg">
 <h3>First Communion</h3>
 <p>
-A spiritual experience that strengthened my personal values and connection with Catholicism.
+Spiritual experience that strengthened my values, discipline and connection with Catholicism.
 </p>
 </div>
 
 <div class="card">
-<img src="img5.jpg" alt="">
+<img src="img5.jpg">
 <h3>Pianist</h3>
 <p>
-Participated in piano recitals and musical collaborations involving saxophone and cello performances.
+Participated in piano recitals and collaborations involving saxophone and cello performances.
 </p>
 </div>
 
 <div class="card">
-<img src="img6.jpg" alt="">
+<img src="img6.jpg">
 <h3>Hospital Volunteer</h3>
 <p>
-Participated in Christmas volunteer activities for children with cancer by organizing shows, gifts and meals.
+Participated in Christmas volunteering activities for children with cancer through shows, toys and food donations.
 </p>
 </div>
 
@@ -500,35 +807,45 @@ Participated in Christmas volunteer activities for children with cancer by organ
 
 <h2 class="section-title">Personal Interests</h2>
 
-<div class="card-container">
+<div class="grid">
 
 <div class="card">
-<img src="img7.jpg" alt="">
-<h3>Gaming</h3>
+
+<img src="img7.jpg">
+
+<h3>Gaming & Technology</h3>
+
 <p>
-I enjoy videogames on PC because they help me improve strategy, creativity and teamwork.
+I enjoy videogames on PC because they help me improve creativity, teamwork and strategic thinking.
 </p>
+
 </div>
 
 <div class="card">
-<h3>Swimming & Cardio</h3>
+
+<h3>Fitness & Swimming</h3>
+
 <p>
-I enjoy swimming, aerobics, pilates and cardio activities to maintain physical and mental wellness.
+I enjoy swimming, aerobics, pilates and cardio activities to maintain mental and physical wellness.
 </p>
+
 </div>
 
 <div class="card">
-<h3>Creativity & Technology</h3>
+
+<h3>Creativity & Design</h3>
+
 <p>
-I like combining creativity with modern technology, design and digital tools.
+I like combining creativity with technology, visual design and digital tools to create meaningful projects.
 </p>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- VIDEO PLACEHOLDER -->
+<!-- VIDEO -->
 
 <section class="section" id="video">
 
@@ -536,19 +853,15 @@ I like combining creativity with modern technology, design and digital tools.
 
 <div class="video-box">
 
-<p>
-Admissions Video Coming Soon...
-</p>
+<h3>Admissions Video Coming Soon</h3>
 
 <div class="video-placeholder">
 
-<h1>🎥</h1>
+🎥
 
-<br>
+<br><br>
 
-<p>
 Future admissions presentation video placeholder.
-</p>
 
 </div>
 
@@ -559,14 +872,14 @@ Future admissions presentation video placeholder.
 <footer>
 
 <p>
-© 2026 Alan Eliel Muñoz Castro | Professional Portfolio
+© 2026 Alan Eliel Muñoz Castro — Professional Portfolio
 </p>
 
 </footer>
 
 <script>
 
-function toggleMode(){
+function toggleTheme(){
 document.body.classList.toggle("light-mode");
 }
 
